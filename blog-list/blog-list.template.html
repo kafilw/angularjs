@@ -1,0 +1,21 @@
+<div class="bg-black-500">
+  <div>
+      Search: <input ng-model="$ctrl.query" />
+  </div>
+  <div>
+    
+  </div>
+
+  <ul>
+      <li ng-repeat="photo in $ctrl.photos">
+        <a href="#!/posts/{{photo.id}}">
+          <img 
+          ng-src="{{photo.name}}"
+          height="200px"
+          width="200px"
+          />
+        </a>
+        <p>Rank: {{photo.rank}} - ID: {{photo.id}}</p>
+      </li>
+    </ul>
+</div>

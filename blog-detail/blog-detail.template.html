@@ -1,0 +1,27 @@
+<h2>Photo ID: {{$ctrl.post.id}}</h2>
+<span>Post Rank: {{$ctrl.post.rank}}</span>
+<div>
+    <img
+        src="{{$ctrl.post.name}}"
+        height="200px"
+        width="200px"
+    >
+</div>
+<form ng-if="postCtrl.editable" ng-submit="postCtrl.saveEditedPost()">
+    <label for="rank">Rank:</label>
+    <input type="number" name="rank" ng-model="postCtrl.post.rank" required>
+  
+    <label for="category">Category:</label>
+    <select name="category" ng-model="postCtrl.post.category" required>
+      <option value="wedding">Wedding</option>
+      <option value="product">Product</option>
+      <option value="outdoor">Outdoor</option>
+    </select>
+  
+    <button type="submit">Save</button>
+  </form>
+
+<button ng-click="postCtrl.editPost()">
+    {{ $ctrl.editable ? 'Save' : 'Edit' }}
+</button>
+<button ng-click="$ctrl.deletePost()">Delete</button>
